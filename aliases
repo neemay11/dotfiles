@@ -1,0 +1,28 @@
+# -----------------------------------
+# Neema Yousefi's shell aliases
+# -----------------------------------
+
+# Navigation
+alias cls="clear && ls"
+mcd () { mkdir -p "$1" && cd "$1"; }
+alias c="clear"
+
+# programming & tools
+alias yri="yarn run run-ios"
+alias yra="yarn run run-android"
+alias fsw="foreman start web"
+alias swag="bundle exec rake rswag:specs:swaggerize"
+alias beef="bundle exec foreman"
+alias mux="tmuxinator"
+alias rcop="bundle exec rubocop --format tap"
+alias bi="bundle install"
+
+# quick edit files
+alias vimrc="$EDITOR ~/.vim/vimrc"
+alias zshrc="$EDITOR ~/.zshrc"
+alias zshrf="source ~/.zshrc"
+
+# misc shortcuts
+alias please="sudo $(history -p \!\!)"
+eval $(thefuck --alias fuck)
+alias nuke="killall -9"
