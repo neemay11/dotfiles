@@ -6,7 +6,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # oh-my-zsh path
-export ZSH="/Users/nyousefi/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # powerlevel9k prompt
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
