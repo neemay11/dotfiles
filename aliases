@@ -3,9 +3,11 @@
 # -----------------------------------
 
 # Navigation
-alias cls="clear && ls"
-mcd () { mkdir -p "$1" && cd "$1"; }
 alias c="clear"
+alias cls="clear && ls"
+alias cgs="clear && git status"
+mcd () { mkdir -p "$1" && cd "$1"; }
+alias :q="exit"
 
 # programming & tools
 alias yri="yarn run run-ios"
@@ -16,11 +18,13 @@ alias beef="bundle exec foreman"
 alias mux="tmuxinator"
 alias rcop="bundle exec rubocop --format tap"
 alias bi="bundle install"
+alias be="bundle exec"
 
 # quick edit files
-alias vimrc="$EDITOR ~/.vim/vimrc"
-alias zshrc="$EDITOR ~/.zshrc"
-alias zshrf="source ~/.zshrc"
+alias vimrc="$EDITOR $DOTFILES/vimrc"
+alias zshrc="$EDITOR $DOTFILES/zshrc"
+alias aliases="$EDITOR $DOTFILES/aliases"
+alias zshrf="source $DOTFILES/zshrc"
 
 # misc shortcuts
 alias please="sudo $(history -p \!\!)"

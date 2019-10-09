@@ -24,6 +24,7 @@ plugins=(git tmux tmuxinator)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export DOTFILES="$HOME/.dotfiles"
 
 # set vim as editor
 export EDITOR='vim'
@@ -32,4 +33,4 @@ export EDITOR='vim'
 eval "$(rbenv init -)"
 
 #aliases
-source ~/.aliases
+source $DOTFILES/aliases
