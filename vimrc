@@ -9,15 +9,9 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
-" CtrlP -- a fuzzy file finder
-Plug 'ctrlpvim/ctrlp.vim'
-" make CtrlP fast by using ag
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-      \ --ignore .git
-      \ --ignore .DS_Store
-      \ --ignore node_modules
-      \ --ignore .class
-	  \ -g ""'
+" FzF -- fuzzy file finder
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 " vinegar -- netrw enhancements
 Plug 'tpope/vim-vinegar'
@@ -39,10 +33,36 @@ Plug 'tpope/vim-fugitive'
 " surround -- easier quoting/parenthesizing
 Plug 'tpope/vim-surround'
 
-" better javascript synyax
-Plug 'jelera/vim-javascript-syntax'
+" ale -- lint as you type
+Plug 'dense-analysis/ale'
+
+" polygot -- language extensions
+Plug 'sheerun/vim-polyglot'
+
+" gutentags -- auto-generate tags files
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
+
+" ----------Plugin Settings----------
+
+" FZF searching
+nnoremap <C-p> :Files<CR>
+nnoremap <Leader>t :Tags<CR>
+nnoremap <Leader>h :History<CR>
+
+" gutentags -- use ripgrep to resepct .gitignore
+let g:gutentags_file_list_command = 'rg --files'
+
+" gundo
+nnoremap U :GundoToggle<CR>
+let g:gundo_close_on_revert = 1
+
+" ALE -- keep column always open
+let g:ale_sign_column_always = 1
+
+" ALE -- disable ale auto-highlighting
+let g:ale_set_highlights = 0
 
 " ----------UI----------
 
@@ -81,6 +101,9 @@ set laststatus=2
 
 " ----------Navigation----------
 
+" backspace fix
+set backspace=indent,eol,start
+
 " makes j and k not skip over wrapped lines
 nnoremap j gj
 nnoremap k gk
@@ -104,7 +127,7 @@ set hlsearch
 " clears highlighted search items
 nnoremap <leader><space> :nohlsearch<CR>
 
-"  ----------Indentation----------
+"  ----------Style----------
 
 " indent newlines according to filetype specifications
 filetype indent on
@@ -150,8 +173,10 @@ set foldlevelstart=99
 " set space to open and close folds
 nnoremap <Space> za
 
-
 " ----------Other----------
 
-" re-source this file
-nnoremap <leader><r> :source ~/.vim/vimrc<CR>
+" disable modeline
+set nomodeline
+
+" refresh vimrc
+nnoremap <leader><F5> :source ~/.dotfiles/vimrc<CR>

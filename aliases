@@ -30,3 +30,4 @@ alias zshrf="source $DOTFILES/zshrc"
 alias please="sudo $(history -p \!\!)"
 eval $(thefuck --alias fuck)
 alias nuke="killall -9"
+alias x="exit"
