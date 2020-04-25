@@ -160,8 +160,6 @@ function! Tabs(tablen)
 	set noexpandtab
 endfunction
 
-call Spaces(2)
-
 " ----------Folding----------
 
 " fold text based on indentation

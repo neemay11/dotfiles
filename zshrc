@@ -2,8 +2,9 @@
 # Neema Yousefi's zshrc
 # -----------------------------------
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
+
+# BEGIN OH_MY_ZSH
 
 # oh-my-zsh path
 export ZSH="$HOME/.oh-my-zsh"
@@ -15,13 +16,15 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs histor
 # set powerlevel9k as zsh theme
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-# use case-sensitive completion.
-CASE_SENSITIVE="true"
+# case sensetive autocomplete
+CASE_SENSITIVE="false"
 
 # oh-my-zsh plugins
 plugins=(git tmux tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
+
+# END OH_MY_ZSH
 
 # User configuration
 export DOTFILES="$HOME/.dotfiles"

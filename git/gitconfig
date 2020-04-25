@@ -7,13 +7,18 @@
 	email = neema@yousefi.dev
 [core]
 	editor = vim
-	excludesfile = ~/.config/gitignore
+	excludesfile = ~/.dotfiles/git/gitignore_global
+	pager = cat
 [color]
 	ui = true
 [alias]
-  assume = update-index --assume-unchanged
-  unassume = update-index --no-assume-unchanged
-  assumed = "!git ls-files -v | grep ^h | cut -c 3-"
-  snapshot = !git stash save "snapshot: $(date)" && git stash apply -q
-  ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
-  theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	snapshot = !git stash save "snapshot: $(date)" && git stash apply -q
+	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
+	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = True
