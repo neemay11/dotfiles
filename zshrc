@@ -24,7 +24,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 CASE_SENSITIVE="false"
 
 # oh-my-zsh plugins
-plugins=(git tmux tmuxinator)
+plugins=(git tmux tmuxinator yarn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -35,9 +35,6 @@ export DOTFILES="$HOME/.dotfiles"
 
 # set vim as editor
 export EDITOR='vim'
-
-# rbenv
-eval "$(rbenv init -)"
 
 # thefuck
 eval $(thefuck --alias fuck)

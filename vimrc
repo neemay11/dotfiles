@@ -176,5 +176,8 @@ nnoremap <Space> za
 " disable modeline
 set nomodeline
 
+" use system clipboard
+set clipboard=unnamed
+
 " refresh vimrc
 nnoremap <leader><F5> :source ~/.dotfiles/vimrc<CR>

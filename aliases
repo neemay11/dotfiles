@@ -6,14 +6,10 @@
 alias c="clear"
 alias cls="clear && ls"
 alias cgs="clear && git status"
-mcd () { mkdir -p "$1" && cd "$1"; }
 alias :q="exit"
 alias x="exit"
 
 # programming & tools
-alias yi="yarn run"
-alias yri="yarn run run-ios"
-alias yra="yarn run run-android"
 alias fsw="foreman start web"
 alias swag="bundle exec rake rswag:specs:swaggerize"
 alias beef="bundle exec foreman"
@@ -29,5 +25,4 @@ alias aliases="$EDITOR $DOTFILES/aliases"
 alias zshrf="source $DOTFILES/zshrc"
 
 # misc shortcuts
-eval $(thefuck --alias fuck)
 alias nuke="killall -9"
