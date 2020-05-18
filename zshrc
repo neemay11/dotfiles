@@ -1,6 +1,14 @@
+
 # -----------------------------------
 # Neema Yousefi's zshrc
 # -----------------------------------
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 export PATH=$HOME/bin:$PATH
 
@@ -9,12 +17,8 @@ export PATH=$HOME/bin:$PATH
 # oh-my-zsh path
 export ZSH="$HOME/.oh-my-zsh"
 
-# powerlevel9k prompt
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
-
-# set powerlevel9k as zsh theme
-ZSH_THEME="powerlevel9k/powerlevel9k"
+# set powerlevel10k as zsh theme
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # case sensetive autocomplete
 CASE_SENSITIVE="false"
@@ -69,3 +73,6 @@ jdk() {
 
 #aliases
 source $DOTFILES/aliases
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
