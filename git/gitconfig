@@ -15,10 +15,12 @@
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
 	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
-	snapshot = !git stash save "snapshot: $(date)" && git stash apply -q
+	snapshot = !git stash save -u "snapshot: $(date)" && git stash apply -q
 	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 [commit]
 	gpgSign = true
 [tag]
 	gpgSign = True
+[pull]
+	rebase = false

@@ -2,149 +2,127 @@
 " Neema Yousefi's vimrc
 " -----------------------------------
 
-" don't try to be vi compatible
 set nocompatible
+syntax enable
+filetype indent on
 
 " ----------Plugins----------
 
 call plug#begin('~/.vim/plugged')
 
-" FzF -- fuzzy file finder
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-
-" vinegar -- netrw enhancements
 Plug 'tpope/vim-vinegar'
-
-" seamless navigation between vim splits and tmux panes
 Plug 'christoomey/vim-tmux-navigator'
-
-" gundo -- visually see vim's undo tree
 Plug 'sjl/gundo.vim'
-nnoremap U :GundoToggle<CR>
-let g:gundo_close_on_revert = 1
-
-" commentary -- comment stuff out
 Plug 'tpope/vim-commentary'
-
-" fugitive -- git wrapper for vim
-Plug 'tpope/vim-fugitive'
-
-" surround -- easier quoting/parenthesizing
 Plug 'tpope/vim-surround'
-
-" ale -- lint as you type
+Plug 'tpope/vim-fugitive'
 Plug 'dense-analysis/ale'
-
-" polygot -- language extensions
 Plug 'sheerun/vim-polyglot'
-
-" gutentags -- auto-generate tags files
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'vim-airline/vim-airline'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
-" ----------Plugin Settings----------
+"gutentags using rg to ignore certain files specified in .gitignore
+let g:gutentags_file_list_command = 'rg --files'
 
-" FZF searching
+let g:gundo_close_on_revert = 1
+let g:gundo_preview_height = 25
+let g:gundo_prefer_python3 = 1
+
+let g:ale_sign_column_always = 1
+let g:ale_disable_lsp = 1
+let g:ale_fix_on_save = 0
+
+let g:airline_powerline_fonts = 1
+
+" if executable('rg')
+" 	let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+" 	let g:ctrlp_use_caching = 0
+" endif
+
+" ---------UI----------
+highlight Pmenu ctermbg=grey guibg=grey
+highlight clear SignColumn
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+let g:ale_set_highlights = 0
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+let g:ale_set_balloons = 1
+
+let g:airline#extensions#ale#enabled = 1
+
+" ----------Keybinds----------
+nnoremap U :GundoToggle<CR>
+nnoremap <Space> za
+nnoremap <F8> :ALEFix<CR>
+
+" ALE goto warinings/errors
+nnoremap [g :ALEPreviousWrap<CR>
+nnoremap ]g :ALENextWrap<CR>
+
+" COC Completion
+" <C-space> to start completion, tab to cycle, enter to select
+inoremap <silent><expr> <c-@> coc#refresh()
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+nmap <leader>rn <Plug>(coc-rename)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" makes j and k not skip over wrapped lines
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
+
 nnoremap <C-p> :Files<CR>
 nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>h :History<CR>
-
-" gutentags -- use ripgrep to resepct .gitignore
-let g:gutentags_file_list_command = 'rg --files'
-
-" gundo
-nnoremap U :GundoToggle<CR>
-let g:gundo_close_on_revert = 1
-
-" ALE -- keep column always open
-let g:ale_sign_column_always = 1
-
-" ALE -- disable ale auto-highlighting
-let g:ale_set_highlights = 0
-
-" ----------UI----------
-
-" show line numbers
-set number
-
-" show line numbers relative to current line
-set relativenumber
-
-" toggle relative line numbers
 nnoremap <leader>n :set relativenumber!<CR>
-
-" enable syntax highlighting
-syntax enable
-
-" enable enhanced tag matching
-runtime macros/matchit.vim
-
-" display in-progress commands on bottom of window
-set showcmd
-
-" shows cursor coordinates
-set ruler
-
-" underline the line where the cursor is located
-set cursorline
-
-" don't redraw the screen when not needed (like mid-macro)
-set lazyredraw
-
-" display a visual menu when using tab to autocomplete commands
-set wildmenu
-
-" reserve 2 lines for the status
-set laststatus=2
-
-" ----------Navigation----------
-
-" backspace fix
-set backspace=indent,eol,start
-
-" makes j and k not skip over wrapped lines
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-
-"  ----------Search----------
-
-" search as you type
-set incsearch
-
-" searches are case insensitive
-set ignorecase
-
-" searches become case sensitive when entering an uppercase char
-set smartcase
-
-" highlight all matches
-set hlsearch
-
-" clears highlighted search items
 nnoremap <leader><space> :nohlsearch<CR>
 
-"  ----------Style----------
+" refresh vimrc
+nnoremap <leader><F5> :source ~/.dotfiles/vimrc<CR>
 
-" indent newlines according to filetype specifications
-filetype indent on
 
-" set tab character width to be 4 columns
-set tabstop=4
+" Basic Settings
+set number
+set relativenumber
+set showcmd
+set ruler
+set cursorline
+set lazyredraw
+set wildmenu
+set laststatus=2
+set nomodeline
+set clipboard=unnamed
+set backspace=indent,eol,start
+set cmdheight=2
 
-" set indentations from << and >> operations to be 4 whitespace units
-set shiftwidth=4
+" folding
+set foldmethod=indent
+set foldlevelstart=99
 
-" tab and backspace key insert/remove 4 whitespace units
-set softtabstop=4
+set incsearch
+set hlsearch
+" case-insensitive search, unless case is specified
+set ignorecase
+set smartcase
 
-" pressing tab insterts tab characters instead of spaces
-set noexpandtab
 
-" spaces over tabs (tablen=number of spaces in a tab)
+" ----------Functions----------
+"
+" spaces over tabs (tablen=number of columns in a tab)
 function! Spaces(tablen)
 	let &tabstop=a:tablen
 	let &shiftwidth=a:tablen
@@ -160,24 +138,28 @@ function! Tabs(tablen)
 	set noexpandtab
 endfunction
 
-" ----------Folding----------
+call Spaces(2)
 
-" fold text based on indentation
-set foldmethod=indent
+" COC specific stuff
 
-" default to everything unfolded
-set foldlevelstart=99
+set nobackup
+set nowritebackup
+set shortmess+=c
+set updatetime=300
 
-" set space to open and close folds
-nnoremap <Space> za
+function! s:show_documentation()
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	elseif (coc#rpc#ready())
+		call CocActionAsync('doHover')
+	else
+		execute '!' . &keywordprg . " " . expand('<cword>')
+	endif
+endfunction
 
-" ----------Other----------
-
-" disable modeline
-set nomodeline
-
-" use system clipboard
-set clipboard=unnamed
-
-" refresh vimrc
-nnoremap <leader><F5> :source ~/.dotfiles/vimrc<CR>
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+" Note coc#float#scroll works on neovim >= 0.4.3 or vim >= 8.2.0750
+nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"

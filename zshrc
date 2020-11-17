@@ -24,7 +24,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 CASE_SENSITIVE="false"
 
 # oh-my-zsh plugins
-plugins=(git tmux tmuxinator yarn)
+plugins=(git tmux tmuxinator osx npm yarn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -41,6 +41,9 @@ eval $(thefuck --alias fuck)
 
 # fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
+
+# go
+export PATH=$HOME/go/bin:$PATH
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -68,7 +71,7 @@ jdk() {
   java -version
 }
 
-#aliases
+# aliases
 source $DOTFILES/aliases
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
