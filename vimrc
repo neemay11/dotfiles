@@ -33,11 +33,8 @@ let g:gundo_close_on_revert = 1
 let g:gundo_preview_height = 25
 let g:gundo_prefer_python3 = 1
 
-let g:ale_sign_column_always = 1
 let g:ale_disable_lsp = 1
-let g:ale_fix_on_save = 0
 
-let g:airline_powerline_fonts = 1
 
 " if executable('rg')
 " 	let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
@@ -45,15 +42,16 @@ let g:airline_powerline_fonts = 1
 " endif
 
 " ---------UI----------
-highlight Pmenu ctermbg=grey guibg=grey
 highlight clear SignColumn
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 let g:ale_set_highlights = 0
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
-let g:ale_set_balloons = 1
 
+let g:ale_sign_column_always = 1
+
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 
 " ----------Keybinds----------
@@ -89,15 +87,15 @@ nnoremap <C-p> :Files<CR>
 nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>h :History<CR>
 nnoremap <leader>n :set relativenumber!<CR>
+nnoremap <leader>l :set list!<CR>
 nnoremap <leader><space> :nohlsearch<CR>
 
 " refresh vimrc
 nnoremap <leader><F5> :source ~/.dotfiles/vimrc<CR>
 
-
 " Basic Settings
 set number
-set relativenumber
+" set relativenumber
 set showcmd
 set ruler
 set cursorline
@@ -108,6 +106,7 @@ set nomodeline
 set clipboard=unnamed
 set backspace=indent,eol,start
 set cmdheight=2
+set list
 
 " folding
 set foldmethod=indent

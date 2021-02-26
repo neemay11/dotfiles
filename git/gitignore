@@ -24,7 +24,7 @@ tags.*
 [._]*.un~
 
 ### Packages ###
-#better not to commit archive files
+# better not to commit archive files
 *.7z
 *.dmg
 *.gz
@@ -33,6 +33,14 @@ tags.*
 *.rar
 *.tar
 *.zip
+
+### vscode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
 
 ### OSX ###
 # General

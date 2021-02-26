@@ -7,7 +7,7 @@
 	email = neema@yousefi.dev
 [core]
 	editor = vim
-	excludesfile = ~/.dotfiles/git/gitignore_global
+	excludesfile = ~/.dotfiles/git/gitignore
 	pager = cat
 [color]
 	ui = true
@@ -24,3 +24,5 @@
 	gpgSign = True
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
