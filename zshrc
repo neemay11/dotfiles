@@ -24,7 +24,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 CASE_SENSITIVE="false"
 
 # oh-my-zsh plugins
-plugins=(git tmux tmuxinator osx npm yarn)
+plugins=(git bundler)
 
 source $ZSH/oh-my-zsh.sh
 

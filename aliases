@@ -10,12 +10,7 @@ alias :q="exit"
 alias x="exit"
 
 # programming & tools
-alias fsw="foreman start web"
-alias beef="bundle exec foreman"
 alias mux="tmuxinator"
-alias cop="bundle exec rubocop --format tap"
-alias bi="bundle install"
-alias be="bundle exec"
 
 # quick edit files
 alias vimrc="$EDITOR $DOTFILES/vimrc"
