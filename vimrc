@@ -36,11 +36,6 @@ let g:gundo_prefer_python3 = 1
 let g:ale_disable_lsp = 1
 
 
-" if executable('rg')
-" 	let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-" 	let g:ctrlp_use_caching = 0
-" endif
-
 " ---------UI----------
 highlight clear SignColumn
 highlight clear ALEErrorSign
@@ -53,6 +48,7 @@ let g:ale_sign_column_always = 1
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled=1
 
 " ----------Keybinds----------
 nnoremap U :GundoToggle<CR>
@@ -137,7 +133,7 @@ function! Tabs(tablen)
 	set noexpandtab
 endfunction
 
-call Spaces(2)
+call Tabs(4)
 
 " COC specific stuff
 

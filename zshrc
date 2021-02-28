@@ -45,6 +45,9 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 # go
 export PATH=$HOME/go/bin:$PATH
 
+# rust
+export PATH=$HOME/.cargo/bin:$PATH
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
