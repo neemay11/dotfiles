@@ -137,7 +137,7 @@ function! Tabs(tablen)
 	set noexpandtab
 endfunction
 
-call Tabs(4)
+call Spaces(2)
 
 " COC specific stuff
 
