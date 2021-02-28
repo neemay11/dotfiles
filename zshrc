@@ -40,7 +40,7 @@ export EDITOR='vim'
 eval $(thefuck --alias fuck)
 
 # fzf
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --follow'
 
 # go
 export PATH=$HOME/go/bin:$PATH

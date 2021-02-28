@@ -82,6 +82,7 @@ noremap gk k
 nnoremap <C-p> :Files<CR>
 nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>h :History<CR>
+nnoremap <Leader>b :Buffers<CR>
 nnoremap <leader>n :set relativenumber!<CR>
 nnoremap <leader>l :set list!<CR>
 nnoremap <leader><space> :nohlsearch<CR>
