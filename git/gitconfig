@@ -8,7 +8,6 @@
 [core]
 	editor = vim
 	excludesfile = ~/.dotfiles/git/gitignore
-	pager = cat
 [color]
 	ui = true
 [alias]
@@ -26,3 +25,6 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[pager]
+	branch = false
+	stash = false
