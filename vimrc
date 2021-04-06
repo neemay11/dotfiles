@@ -23,10 +23,14 @@ Plug 'sheerun/vim-polyglot'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
-"gutentags using rg to ignore certain files specified in .gitignore
+" make editorconfig work with fugitive
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+" gutentags using rg to ignore certain files specified in .gitignore
 let g:gutentags_file_list_command = 'rg --files'
 
 let g:gundo_close_on_revert = 1
@@ -117,7 +121,6 @@ set smartcase
 
 
 " ----------Functions----------
-"
 " spaces over tabs (tablen=number of columns in a tab)
 function! Spaces(tablen)
 	let &tabstop=a:tablen
