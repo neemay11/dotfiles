@@ -1,17 +1,24 @@
 # set vim as editor
-export EDITOR='vim'
+export EDITOR="vim"
+
+# declare projects directory
+export PROJECTS="$HOME/dev"
 
 # thefuck
 eval $(thefuck --alias fuck)
 
 # fzf
-export FZF_DEFAULT_COMMAND='rg --files --follow'
+export FZF_DEFAULT_COMMAND="rg --files --follow"
 
 # go
-export PATH=$HOME/go/bin:$PATH
+export GOPATH="$PROJECTS/.go"
+export PATH="$GOPATH/bin:$PATH"
 
 # rust
-export PATH=$HOME/.cargo/bin:$PATH
+export CARGO_HOME="$PROJECTS/.cargo"
+
+# ruby
+eval "$(rbenv init -)"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
