@@ -20,7 +20,7 @@
 [commit]
 	gpgSign = true
 [tag]
-	gpgSign = True
+	gpgSign = true
 [pull]
 	rebase = false
 [init]
