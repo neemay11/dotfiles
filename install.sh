@@ -1,9 +1,5 @@
 #! /bin/sh
 
-# create symlinks
-ln -sv ~/.dotfiles/vimrc ~/.vimrc
-ln -sv ~/.dotfiles/vim ~/.vim
-
 # loop through all subdirectories and run all "install.sh" scripts
 for i in */install.sh
 do
