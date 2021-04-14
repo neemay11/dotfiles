@@ -9,12 +9,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=$HOME/bin:$PATH
+# dotfiles save location
+export DOTFILES="$HOME/.dotfiles"
 
 # BEGIN OH_MY_ZSH
 
 # oh-my-zsh path
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$DOTFILES/.oh-my-zsh"
 
 # set powerlevel10k as zsh theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -28,9 +29,6 @@ plugins=(git bundler)
 source $ZSH/oh-my-zsh.sh
 
 # END OH_MY_ZSH
-
-# dotfiles save location
-export DOTFILES="$HOME/.dotfiles"
 
 # exports
 [[ ! -f $DOTFILES/zsh/exports.zsh ]] || source $DOTFILES/zsh/exports.zsh

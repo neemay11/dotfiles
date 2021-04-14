@@ -1,3 +1,6 @@
+# PATH
+export PATH=$HOME/bin:$PATH
+
 # set vim as editor
 export EDITOR="vim"
 
