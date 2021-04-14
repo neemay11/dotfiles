@@ -2,6 +2,11 @@
 
 # create symlink for vimrc
 echo "Installing vim settings."
+if [ ! -d $HOME/.vim ]
+then
+		mkdir -p $HOME/.vim
+fi
+
 ln -sv $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
 ln -sv $HOME/.dotfiles/vim/ftplugin $HOME/.vim/ftplugin
 ln -sv $HOME/.dotfiles/vim/coc-settings.json $HOME/.vim/coc-settings.json
