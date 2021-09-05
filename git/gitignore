@@ -2,6 +2,17 @@
 # Neema Yousefi's global gitignore
 # -----------------------------------
 
+### Packages ###
+# better not to commit archive files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
 ### Linux ###
 *~
 
