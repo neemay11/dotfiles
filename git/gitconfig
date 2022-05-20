@@ -5,7 +5,7 @@
 [user]
 	name = Neema Yousefi
 	email = nyousefi@inspirecleanenergy.com
-	signingKey = 52CFDF7B829FCF32
+	signingKey = 14CF1AED0659FAB3
 [core]
 	editor = vim
 	excludesfile = ~/.dotfiles/git/gitignore
