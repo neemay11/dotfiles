@@ -90,6 +90,7 @@ nnoremap <Leader>b :Buffers<CR>
 nnoremap <leader>n :set relativenumber!<CR>
 nnoremap <leader>l :set list!<CR>
 nnoremap <leader><CR> :nohlsearch<CR>
+nnoremap <leader><space> :nohlsearch<CR>
 
 " refresh vimrc
 nnoremap <leader><F5> :source ~/.dotfiles/vimrc<CR>

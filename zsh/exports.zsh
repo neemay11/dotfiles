@@ -21,7 +21,7 @@ export PATH="$GOPATH/bin:$PATH"
 export CARGO_HOME="$PROJECTS/.cargo"
 
 # ruby
-eval "$(rbenv init -)"
+eval "$(rbenv init - zsh)"
 
 # Android Studio
 export ANDROID_HOME=$HOME/Library/Android/sdk

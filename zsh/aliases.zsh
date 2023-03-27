@@ -6,6 +6,7 @@ alias :q="exit"
 alias x="exit"
 
 # programming & tools
+alias vim="nvim"
 alias mux="tmuxinator"
 alias zshrf="source $DOTFILES/zshrc"
 
