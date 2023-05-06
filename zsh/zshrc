@@ -15,8 +15,8 @@ export DOTFILES="$HOME/.dotfiles"
 # oh-my-zsh
 [[ ! -f $DOTFILES/zsh/oh-my-zsh.zsh ]] || source $DOTFILES/zsh/oh-my-zsh.zsh
 
-# exports
-[[ ! -f $DOTFILES/zsh/exports.zsh ]] || source $DOTFILES/zsh/exports.zsh
+# settings
+[[ ! -f $DOTFILES/zsh/configs.zsh ]] || source $DOTFILES/zsh/configs.zsh
 
 # aliases
 [[ ! -f $DOTFILES/zsh/aliases.zsh ]] || source $DOTFILES/zsh/aliases.zsh

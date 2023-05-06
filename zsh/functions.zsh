@@ -3,7 +3,6 @@ mcd() {
 	mkdir -p "$@" && cd "$@"
 }
 
-
 # quick change jdk versions
 jdk() {
 	version=$1
