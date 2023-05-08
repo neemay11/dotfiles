@@ -1,5 +1,11 @@
 #! /bin/sh
 
+# ensure these paths exist
+mkdir -p "$HOME/dev"
+
+# remove old files
+rm -rf $DOTFILES/.oh-my-zsh
+
 echo "Installing ohmyzsh."
 ZSH=$DOTFILES/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
