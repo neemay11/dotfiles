@@ -1,5 +1,8 @@
 # PATH
-export PATH=$HOME/bin:$PATH
+export PATH="$HOME/bin:$PATH"
+
+# homebrew
+export PATH="/opt/homebrew/bin:$PATH"
 
 # set vim as editor
 export EDITOR="vim"
@@ -37,3 +40,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # vi mode
 bindkey -v
+
+# for gpg to work with p10k
+export GPG_TTY=$TTY
