@@ -8,6 +8,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 CASE_SENSITIVE="false"
 
 # oh-my-zsh plugins
-plugins=(git bundler)
+plugins=(git bundler macos)
 
 source $ZSH/oh-my-zsh.sh

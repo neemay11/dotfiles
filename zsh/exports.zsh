@@ -1,11 +1,17 @@
+# homebrew
+export PATH="/opt/homebrew/bin:$PATH"
+
 # PATH
-export PATH=$HOME/bin:$PATH
+export PATH="$HOME/bin:$PATH"
 
 # set vim as editor
 export EDITOR="vim"
 
 # declare projects directory
 export PROJECTS="$HOME/dev"
+
+# ripgrep
+export RIPGREP_CONFIG_PATH="$DOTFILES/ripgreprc"
 
 # thefuck
 eval $(thefuck --alias fuck)

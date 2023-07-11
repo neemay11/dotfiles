@@ -2,12 +2,11 @@
 alias c="clear"
 alias cls="clear && ls"
 alias cgs="clear && git status"
-alias :q="exit"
 alias x="exit"
 
 # programming & tools
-alias vim="nvim"
 alias mux="tmuxinator"
+alias vim="nvim"
 alias zshrf="source $DOTFILES/zshrc"
 
 # misc shortcuts

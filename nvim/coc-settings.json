@@ -1,0 +1,7 @@
+{
+	"diagnostic.displayByAle": true,
+	"suggest.autoTrigger": "none",
+	"javascript.suggestionActions.enabled": false,
+	"solargraph.commandPath": "~/.rbenv/shims/solargraph",
+	"solargraph.useBundler": false
+}

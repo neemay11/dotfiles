@@ -12,8 +12,8 @@
 [color]
 	ui = true
 [alias]
-	assume = update-index --assume-unchanged
-	unassume = update-index --no-assume-unchanged
+	assume = update-index --skip-worktree
+	unassume = update-index --no-skip-worktree
 	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 	snapshot = !git stash save -u "snapshot: $(date)" && git stash apply -q
 	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
