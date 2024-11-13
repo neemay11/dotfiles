@@ -1,7 +1,7 @@
 #! /bin/sh
 
 # remove old vim config
-rm -f $HOME/.vim
+rm -rf $HOME/.vim
 rm -rf $HOME/.vimrc
 
 # create symlink for vimrc
@@ -9,7 +9,7 @@ echo "Installing vim settings."
 mkdir -p $HOME/.vim
 
 ln -sv $DOTFILES/vim/vimrc $HOME/.vimrc
-ln -sv $DOTFILES/vim/ftplugin $HOME/.vim/ftplugin
+ln -sv $DOTFILES/vim/ftplugin/ $HOME/.vim/ftplugin
 ln -sv $DOTFILES/vim/coc-settings.json $HOME/.vim/coc-settings.json
 
 # download vim-plug
