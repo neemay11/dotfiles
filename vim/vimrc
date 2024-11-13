@@ -117,19 +117,19 @@ set smartcase
 
 
 " ----------Functions----------
-" spaces over tabs (tablen=number of columns in a tab)
-function! Spaces(tablen)
-	let &tabstop=a:tablen
-	let &shiftwidth=a:tablen
-	let &softtabstop=a:tablen
+" spaces over tabs
+function! Spaces(tabWidth)
+	let &tabstop=a:tabWidth
+	let &shiftwidth=a:tabWidth
+	let &softtabstop=a:tabWidth
 	set expandtab
 endfunction
 
-" tabs over spaces (tablen=number of spaces in a tab)
-function! Tabs(tablen)
-	let &tabstop=a:tablen
-	let &shiftwidth=a:tablen
-	let &softtabstop=a:tablen
+" tabs over spaces
+function! Tabs(tabWidth)
+	let &tabstop=a:tabWidth
+	let &shiftwidth=a:tabWidth
+	let &softtabstop=a:tabWidth
 	set noexpandtab
 endfunction
 
