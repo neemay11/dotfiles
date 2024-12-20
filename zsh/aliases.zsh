@@ -7,6 +7,7 @@ alias x="exit"
 
 # programming & tools
 alias mux="tmuxinator"
+alias vim="nvim"
 alias zshrf="source $DOTFILES/zshrc"
 
 # misc shortcuts
