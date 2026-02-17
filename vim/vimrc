@@ -22,7 +22,6 @@ Plug 'dense-analysis/ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-airline/vim-airline'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -59,20 +58,6 @@ nnoremap <F8> :ALEFix<CR>
 nnoremap [g :ALEPreviousWrap<CR>
 nnoremap ]g :ALENextWrap<CR>
 
-" COC Completion
-" <C-space> to start completion, tab to cycle, enter to select
-inoremap <silent><expr> <c-@> coc#refresh()
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-nmap <leader>rn <Plug>(coc-rename)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
 " makes j and k not skip over wrapped lines
 noremap j gj
 noremap k gk
@@ -92,7 +77,6 @@ nnoremap <leader><F5> :source ~/.dotfiles/vimrc<CR>
 
 " Basic Settings
 set number
-" set relativenumber
 set showcmd
 set ruler
 set cursorline
@@ -109,14 +93,14 @@ set list
 set foldmethod=indent
 set foldlevelstart=99
 
+" search
 set incsearch
 set hlsearch
-" case-insensitive search, unless case is specified
 set ignorecase
 set smartcase
 
 
-" ----------Functions----------
+" ----------Spacing Functions----------
 " spaces over tabs
 function! Spaces(tabWidth)
 	let &tabstop=a:tabWidth
@@ -134,27 +118,3 @@ function! Tabs(tabWidth)
 endfunction
 
 call Tabs(4)
-
-" COC specific stuff
-
-set nobackup
-set nowritebackup
-set shortmess+=c
-set updatetime=300
-
-function! s:show_documentation()
-	if (index(['vim','help'], &filetype) >= 0)
-		execute 'h '.expand('<cword>')
-	elseif (coc#rpc#ready())
-		call CocActionAsync('doHover')
-	else
-		execute '!' . &keywordprg . " " . expand('<cword>')
-	endif
-endfunction
-
-" Remap <C-f> and <C-b> for scroll float windows/popups.
-" Note coc#float#scroll works on neovim >= 0.4.3 or vim >= 8.2.0750
-nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
