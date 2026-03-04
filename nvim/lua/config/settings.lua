@@ -1,0 +1,9 @@
+vim.opt.number = true
+vim.opt.cursorline = true
+vim.opt.clipboard = "unnamed"
+vim.opt.cmdheight = 2
+vim.opt.list = true
+vim.opt.foldmethod ="indent"
+vim.opt.foldlevelstart = 99
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
