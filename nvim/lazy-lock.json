@@ -1,4 +1,5 @@
 {
+  "copilot.vim": { "branch": "release", "commit": "a12fd5672110c8aa7e3c8419e28c96943ca179be" },
   "gundo.vim": { "branch": "master", "commit": "c5efef192b975b8e7d5fa3c6db932648d3b76323" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
   "vim-airline": { "branch": "master", "commit": "4ab7c731fe64672412fbe0723831928785c84931" },
