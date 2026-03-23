@@ -1,3 +1,3 @@
 return {
-'sjl/gundo.vim',
+	'sjl/gundo.vim',
 }
