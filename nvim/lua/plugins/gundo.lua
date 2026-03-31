@@ -1,3 +1,0 @@
-return {
-	'sjl/gundo.vim',
-}
