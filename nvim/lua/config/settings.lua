@@ -7,3 +7,4 @@ vim.opt.foldmethod ="indent"
 vim.opt.foldlevelstart = 99
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.scrolloff = 8
