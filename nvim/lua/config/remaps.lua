@@ -7,3 +7,6 @@ vim.keymap.set("n", "gk", "k")
 -- disable search highlight
 vim.keymap.set("n", "<leader><space>", "<cmd>nohlsearch<cr>")
 vim.keymap.set("n", "<leader><cr>", "<cmd>nohlsearch<cr>")
+
+-- folding shortcut
+vim.keymap.set("n", "<space>", "za")

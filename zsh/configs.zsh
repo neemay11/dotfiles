@@ -5,7 +5,7 @@ export PATH="$HOME/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 
 # set vim as editor
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # declare projects directory
 export PROJECTS="$HOME/dev"
