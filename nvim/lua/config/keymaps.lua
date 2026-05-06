@@ -10,3 +10,12 @@ vim.keymap.set("n", "<leader><cr>", "<cmd>nohlsearch<cr>")
 
 -- folding shortcut
 vim.keymap.set("n", "<space>", "za")
+
+-- toggle relative line numbers
+vim.keymap.set("n", "<leader>n", function()
+	if vim.opt.relativenumber:get() then
+		vim.opt.relativenumber = false
+	else
+		vim.opt.relativenumber = true
+	end
+end)

@@ -1,11 +1,11 @@
-local tabs = function(size)
+tabs = function(size)
 	vim.opt.tabstop = size
 	vim.opt.shiftwidth = size
 	vim.opt.softtabstop = size
 	vim.opt.expandtab = false
 end
 
-local spaces = function(size)
+spaces = function(size)
 	vim.opt.tabstop = size
 	vim.opt.shiftwidth = size
 	vim.opt.softtabstop = size
