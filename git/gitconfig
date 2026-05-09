@@ -6,7 +6,7 @@
 	name = Neema Yousefi
 	email = neema@yousefi.dev
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.dotfiles/git/gitignore
 [color]
 	ui = true
