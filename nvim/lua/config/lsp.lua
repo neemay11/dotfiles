@@ -6,7 +6,6 @@ local diagnostic_signs = {
 }
 
 vim.diagnostic.config({
-	virtual_text = false,
 	signs = {
 		text = {
 			[vim.diagnostic.severity.ERROR] = diagnostic_signs.error,

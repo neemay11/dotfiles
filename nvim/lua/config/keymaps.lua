@@ -13,9 +13,13 @@ vim.keymap.set("n", "<space>", "za")
 
 -- toggle relative line numbers
 vim.keymap.set("n", "<leader>n", function()
-	if vim.opt.relativenumber:get() then
-		vim.opt.relativenumber = false
-	else
-		vim.opt.relativenumber = true
-	end
+		vim.opt.relativenumber = not vim.opt.relativenumber:get()
 end)
+
+-- lsp goto definition
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+
+-- diagnostics messasge
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostics" })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
