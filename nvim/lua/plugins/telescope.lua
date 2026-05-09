@@ -26,5 +26,6 @@ return {
 	keys = {
 		{ "<C-p>", "<cmd>Telescope find_files<cr>" },
 		{ "<leader>fg", "<cmd>Telescope live_grep<cr>" },
+		{ "<leader>fb", "<cmd>Telescope buffers<cr>" },
 	},
 }

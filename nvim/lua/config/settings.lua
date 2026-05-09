@@ -1,7 +1,6 @@
 vim.opt.number = true -- line numbers
 vim.opt.cursorline = true -- highlight the current line
 vim.opt.clipboard = "unnamed" -- use system clipboard
-vim.opt.cmdheight = 2 -- extra space for command line
 vim.opt.list = true -- show whitespace characters
 vim.opt.foldmethod ="indent" -- fold based on indentation
 vim.opt.foldlevelstart = 99 -- start with all folds open
